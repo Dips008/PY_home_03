@@ -10,15 +10,19 @@
 
 k = int(input('Enter the number k = '))
 
-def nefib(n):
-   if n == -1:
-      return 1
-   elif n == -2:
-      return -1
-   else:
-      return nefib(n+2) - nefib(n+1)   
-   
+
+def neg_fib(n):
+    if n == -1:
+        return 1
+    elif n == -2:
+        return -1
+    elif n < 0:
+        return neg_fib(n+2) - neg_fib(n+1)
+    else:
+        return neg_fib(n-1) + neg_fib(n-2)
+
+
 list = []
-for e in range(-k, k):
-   list.append(nefib(e))
-print(list) 
+for e in range(-k, k+1):
+    list.append(neg_fib(e))
+print(list)
