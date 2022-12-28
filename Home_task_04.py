@@ -5,3 +5,14 @@
 # - 45 -> 101101
 # - 3 -> 11
 # - 2 -> 10
+
+n = int(input('Enter the number n = '))
+
+
+ns = ''
+ 
+while n > 0:
+    ns = str(n % 2) + ns
+    n = n // 2
+ 
+print(ns)
